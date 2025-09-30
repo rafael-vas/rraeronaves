@@ -45,7 +45,7 @@ const dadosPadrao = [
 let aeronaves = dadosSalvos ? JSON.parse(dadosSalvos) : dadosPadrao;
 
 // ----------------------------------------------------
-//  FUNÇÕES AUXILIARES (Helpers)
+//  FUNÇÕES AUXILIARES
 // ----------------------------------------------------
 
 function salvarDados() {
@@ -159,11 +159,6 @@ function showConfirmationModal(mensagem, onConfirm) {
 //  LÓGICA PRINCIPAL DA APLICAÇÃO
 // ----------------------------------------------------
 
-/**
- * Retorna a classe CSS correta para um determinado status de aeronave.
- * @param {string} status - O texto do status.
- * @returns {string} - A classe CSS correspondente.
- */
 function getStatusClass(status) {
   const statusMap = {
     "Em Manutenção": "em-manutencao",
@@ -171,7 +166,7 @@ function getStatusClass(status) {
     Inspeção: "inspecao",
     Finalizada: "finalizada",
   };
-  return statusMap[status] || ""; // Retorna a classe do mapa ou uma string vazia
+  return statusMap[status] || "";
 }
 
 function renderTabela() {
@@ -193,7 +188,6 @@ function renderTabela() {
     aeronaves.forEach((a, i) => {
       const tr = document.createElement("tr");
 
-      // **** ESTA É A PARTE CORRIGIDA ****
       const statusClassName = getStatusClass(a.status);
       tr.innerHTML = `
                 <td>${a.matricula}</td>
@@ -296,7 +290,7 @@ function excluirAeronave(i) {
 }
 
 // ----------------------------------------------------
-//  EVENT LISTENERS (Ouvintes de Eventos)
+//  EVENT LISTENERS
 // ----------------------------------------------------
 
 fecharModalBtn.onclick = function () {
@@ -334,3 +328,4 @@ form.onsubmit = function (event) {
 //  INICIALIZAÇÃO DA APLICAÇÃO
 // ----------------------------------------------------
 renderTabela();
+
