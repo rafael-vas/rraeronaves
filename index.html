@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RR Manutenção - Aeronaves</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- <link rel="stylesheet" href="./new-style.css"> -->
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        <h1>✈️ RR Manutenção <span style="font-weight: normal;">Aeronaves</span></h1>
+        <nav>
+            <a href="#">Dashboard</a>
+            <a href="#">Aeronaves</a>
+            <a href="#">Relatórios</a>
+        </nav>
+    </header>
+
+    <!-- Stats -->
+    <div class="stats">
+        <div class="card">
+            <h2 id="total">0</h2>
+            <p>Total de Aeronaves</p>
+        </div>
+        <div class="card">
+            <h2 id="manutencao">0</h2>
+            <p>Em Manutenção</p>
+        </div>
+        <div class="card">
+            <h2 id="validos">0</h2>
+            <p>CVAs Válidos</p>
+        </div>
+        <div class="card">
+            <h2 id="vencendo">0</h2>
+            <p>Vencendo em 30 dias</p>
+        </div>
+    </div>
+
+    <!-- Button -->
+    <button class="add-btn" onclick="adicionarAeronave()">Adicionar Aeronave</button>
+
+    <!-- Table -->
+    <table>
+        <thead>
+            <tr>
+                <th>Matrícula</th>
+                <th>Modelo</th>
+                <th>Status</th>
+                <th>CVA</th>
+                <th>Validade</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="tabela"></tbody>
+    </table>
+
+    <!-- Modal -->
+
+    <!-- Modal -->
+    <div id="modalAeronave" class="modal">
+        <div class="modal-content">
+            <span class="close" id="fecharModal">&times;</span>
+            <h2 id="tituloModal">Adicionar Aeronave</h2>
+            <form id="formAeronave">
+                <label for="matricula">Matrícula:</label>
+                <input type="text" id="matricula" name="matricula" required>
+
+                <label for="modelo">Modelo:</label>
+                <input type="text" id="modelo" name="modelo" required>
+
+                <label for="status">Status:</label>
+                <select id="status" name="status" required>
+                    <option value="Em Manutenção">Em Manutenção</option>
+                    <option value="Aguardando Peças">Aguardando Peças</option>
+                    <option value="Inspeção">Inspeção</option>
+                    <option value="Finalizada">Finalizada</option>
+                </select>
+
+                <label for="cva">CVA:</label>
+                <input type="text" id="cva" name="cva" required>
+
+                <label for="validade">Validade (AAAA-MM-DD):</label>
+                <input type="date" id="validade" name="validade" required>
+
+                <input type="hidden" id="indice" name="indice" value="-1">
+
+                <button type="submit" id="btnSalvar">Salvar</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
