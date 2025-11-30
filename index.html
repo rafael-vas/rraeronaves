@@ -5,23 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RR Manutenção - Aeronaves</title>
-    <link rel="stylesheet" href="./style.css">
-    <!-- <link rel="stylesheet" href="./new-style.css"> -->
-    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="module" src="./js/script.js"></script>
 </head>
 
 <body>
-    <!-- Navbar -->
     <header>
         <h1>✈️ RR Manutenção <span style="font-weight: normal;">Aeronaves</span></h1>
         <nav>
-            <a href="#">Dashboard</a>
-            <a href="#">Aeronaves</a>
-            <a href="#">Relatórios</a>
+            <a href="./" style="color: var(--primary-color);">Aeronaves</a>
+            <a href="./pages/dashboard.html">Dashboard</a>
+            <a href="./pages/relatorios.html">Relatórios</a>
         </nav>
     </header>
 
-    <!-- Stats -->
     <div class="stats">
         <div class="card">
             <h2 id="total">0</h2>
@@ -41,10 +38,8 @@
         </div>
     </div>
 
-    <!-- Button -->
-    <button class="add-btn" onclick="adicionarAeronave()">Adicionar Aeronave</button>
+    <button id="btnAdicionar" class="add-btn">Adicionar Aeronave</button>
 
-    <!-- Table -->
     <table>
         <thead>
             <tr>
@@ -59,9 +54,6 @@
         <tbody id="tabela"></tbody>
     </table>
 
-    <!-- Modal -->
-
-    <!-- Modal -->
     <div id="modalAeronave" class="modal">
         <div class="modal-content">
             <span class="close" id="fecharModal">&times;</span>

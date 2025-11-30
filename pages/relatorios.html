@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios - RR Manutenção</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/relatoriosStyle.css">
+
+    <script type="module" src="../js/relatoriosCreate.js"></script>
+</head>
+
+<body>
+    <header class="no-print">
+        <h1>✈️ RR Manutenção <span style="font-weight: normal;">Relatórios</span></h1>
+        <nav>
+            <a href="../index.html">Aeronaves</a>
+            <a href="./dashboard.html">Dashboard</a>
+            <a href="./relatorios.html" style="color: var(--primary-color);">Relatórios</a>
+        </nav>
+    </header>
+
+    <main class="report-container">
+
+        <div class="report-controls no-print">
+            <div class="filters">
+                <label>Filtrar por:</label>
+                <select id="filtroRelatorio">
+                    <option value="todos">Todos os Registros</option>
+                    <option value="vencidos">CVA Vencido ou Próximo</option>
+                    <option value="manutencao">Em Manutenção</option>
+                    <option value="disponivel">Operacional (Disponível)</option>
+                </select>
+            </div>
+
+            <button id="btnImprimir" class="print-btn">
+                🖨️ Imprimir / Salvar PDF
+            </button>
+        </div>
+
+        <div class="report-sheet">
+            <div class="report-header">
+                <h2>Relatório de Situação da Frota</h2>
+                <p>RR Manutenções Aeronáuticas Ltda.</p>
+                <p id="dataGeracao" class="report-date">Gerado em: --/--/----</p>
+            </div>
+
+            <table class="report-table">
+                <thead>
+                    <tr>
+                        <th>Matrícula</th>
+                        <th>Modelo</th>
+                        <th>Status Atual</th>
+                        <th>CVA</th>
+                        <th>Validade</th>
+                    </tr>
+                </thead>
+                <tbody id="tbodyRelatorio">
+                </tbody>
+            </table>
+
+            <div class="report-footer">
+                <p>Documento para fins de controle interno e auditoria de compliance.</p>
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>

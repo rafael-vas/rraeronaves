@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - RR Manutenção</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboardStyle.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script type="module" src="../js/dashboardLoader.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>✈️ RR Manutenção <span style="font-weight: normal;">Dashboard</span></h1>
+        <nav>
+            <a href="../index.html">Aeronaves</a>
+            <a href="./dashboard.html" style="color: var(--primary-color);">Dashboard</a>
+            <a href="./relatorios.html">Relatórios</a>
+        </nav>
+    </header>
+
+    <main class="dashboard-container">
+
+        <div class="stats dashboard-stats">
+            <div class="card">
+                <h2 id="dash-total">0</h2>
+                <p>Frota Total</p>
+            </div>
+            <div class="card">
+                <h2 id="dash-disponivel" style="color: var(--status-success);">0</h2>
+                <p>Aeronaves Disponíveis</p>
+            </div>
+            <div class="card">
+                <h2 id="dash-critical" style="color: var(--status-danger);">0</h2>
+                <p>Atenção Crítica</p>
+            </div>
+        </div>
+
+        <div class="charts-grid">
+
+            <div class="chart-card">
+                <h3>Disponibilidade Operacional</h3>
+                <div class="canvas-container">
+                    <canvas id="graficoStatus"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <h3>Distribuição por Modelo</h3>
+                <div class="canvas-container">
+                    <canvas id="graficoModelos"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-card full-width">
+                <h3>Previsão de Vencimentos (CVA)</h3>
+                <div class="canvas-container">
+                    <canvas id="graficoVencimentos"></canvas>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+
+</html>
